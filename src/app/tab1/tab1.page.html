@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+       <img
+          src="https://i.ibb.co/XCNytVd/logo-bistek-removebg-preview.png"
+          alt="logo-bistek-removebg-preview"/>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding class="background">
+
+
+<ion-slides pager="true" [options]='slideOpts' title="Arraste pro lado">
+<ion-slide>
+<img
+ src="https://www.bistek.com.br/media/banners/20220606/vinhosdesk.jpg"
+  alt="logo-bistek-removebg-preview"/>
+
+</ion-slide>
+<ion-slide>
+<img
+ src="https://www.bistek.com.br/media/banners/20220607/festajuninadesk.jpg"
+  alt="logo-bistek-removebg-preview"/>
+
+</ion-slide>
+
+<ion-slide>
+<img
+ src="https://www.bistek.com.br/media/banners/20220603/facasdesk.jpg"
+  alt="logo-bistek-removebg-preview"/>
+
+</ion-slide>
+<ion-slide>
+<img
+ src="https://www.bistek.com.br/media/banners/20220603/sadiadesk.jpg"
+  alt="logo-bistek-removebg-preview"/>
+ 
+</ion-slide>
+
+
+  <ion-slide>
+  <img
+   src=" https://www.bistek.com.br/media/banners/20220406/brfdesk.jpg"
+    alt="logo-bistek-removebg-preview"/>
+  
+  </ion-slide>
+
+
+</ion-slides>
+
+
+
+
+  <ion-list *ngFor="let produto of produtos">
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src={{produto.imagem}}/>
+      </ion-avatar>
+      <ion-label>
+        <h2>{{produto.nome}}</h2>
+        <h3>Preço:R${{produto.preco}}</h3>
+        <p>Quantidade: {{produto.quantidade}}</p>
+      </ion-label>
+      <ion-avatar slot="end" class="icons">
+      <i class="fa-solid fa-trash" title="Excluir Produto" (click)="delete(produto)"></i>
+      <i class="fa-solid fa-cart-arrow-down" title="Adicionar Produto ao carrinho" (click)="addCart(produto)"></i>
+    </ion-avatar>
+    </ion-item>
+  </ion-list>
+</ion-content>
