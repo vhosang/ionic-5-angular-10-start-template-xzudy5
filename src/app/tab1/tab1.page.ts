@@ -23,7 +23,13 @@ export class Tab1Page {
   }
 
   addCart(produto) {
-
+    var confirma = confirm("Deseja adicionar o produto ao seu carrinho?");
+    if (confirma == false) {
+      alert("O item será adicionado ao seu carrinho")
+    }
+    else{
+      alert("O item não foi adicionado ao seu carrinho")
+    }
     
 
     
@@ -41,7 +47,13 @@ export class Tab1Page {
       console.log(this.produtos.indexOf(produto));
       this.carrinho.push(Object.assign({}, produtoCarrinho));
       produto.quantidade -= 1;
-      confirm("Tem certeza Disso?");
+      // var confirma = confirm("Deseja adicionar o produto ao seu carrinho?");
+      // if (confirma == false) {
+      //   alert("O item será adicionado ao seu carrinho")
+      // }
+      // else{
+      //   alert("O item não foi adicionado ao seu carrinho")
+      // }
      
       localStorage.setItem('carrinho', JSON.stringify(this.carrinho));
       localStorage.setItem('produtos', JSON.stringify(this.produtos));
@@ -54,7 +66,7 @@ export class Tab1Page {
     var resultado = confirm("Deseja excluir o produto?");
     if (resultado == false) {
       
-      alert("O item " + produto + " será excluído da lista!");    
+      alert("O item será excluído da lista!");    
   }
   else{
       alert("Você desistiu de excluir o produto!");
